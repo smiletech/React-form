@@ -67,9 +67,14 @@ function AddList() {
   }
 
 const onSubmit = data => {  
+  const pk={
+    id: v4(),
+    ...data
+  }
+  console.log(pk)
   console.log(data)
 const DataArr=JSON.parse(localStorage.getItem("Data"))||[]
-DataArr.push(data);
+DataArr.push(pk);
 localStorage.setItem("Data",JSON.stringify(DataArr));
 alert("data added")
   };
